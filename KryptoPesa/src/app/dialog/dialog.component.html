@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <h1 mat-dialog-title class="text-center">
+                Send Money
+                <span style="color:#f9b707;">(Solana)</span>
+            </h1>
+        </div>
+        <hr>
+        <div mat-dialog-content>
+            <form [formGroup]="productForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Phone No.</mat-label>
+                    <input type="tel" formControlName="contact" placeholder="Phone Number" matInput ng2telInput
+                        [mask]="'(00)-00-000-000'" required>
+
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label>Amount(Solana)</mat-label>
+                    <input formControlName="price" matInput type="number" placeholder="Amount(Solana)">
+                </mat-form-field>
+                <br>
+
+            </form>
+        </div>
+        <hr>
+        <div mat-dialog-actions [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button class="ml-2" mat-raised-button color="primary" (click)="addProduct()">Send</button>
+        </div>
+    </div>
+</div>

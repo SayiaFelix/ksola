@@ -1,0 +1,154 @@
+<hr style="margin-top:-1px;">
+<div class="register" style="border-bottom: 1px solid black ;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-1">
+        <img src="../../assets/c-1.png" width="70px" class="image-fluid bitcoin" alt="lit">
+        <img src="../../assets/c-1.png" width="150px" class="image-fluid bitcoin2" alt="lit">
+        <img src="../../assets/c-1.png" width="50px" class="image-fluid bitcoin3" alt="lit">
+      </div>
+      <div class="col-md-6 col-sm-8">
+        <img src="../../assets/c-1.png" width="120px" class="image-fluid litcoin" alt="lit">
+        <div class="card p-2">
+          <div class="text-center mt-2">
+            <h2>Sign Up</h2>
+            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+          </div>
+          <div class="form">
+            <form [formGroup]="SignupForm" class="mt-3">
+              <div class="row">
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['firstname'].dirty &&
+                   SignupForm.hasError('required','firstname')">
+                    <label for="name">First Name</label>
+                    <br>
+                    <input class="form-control" type="text" formControlName="firstname" required>
+                  </div>
+                  <small *ngIf="SignupForm.controls['firstname'].dirty &&
+                     SignupForm.hasError('required','firstname')" class="text-danger">First Name is required</small>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['lastname'].dirty &&
+                   SignupForm.hasError('required','lastname')">
+
+                    <label for="name">Last Name</label>
+                    <br>
+                    <input class="form-control" type="text" formControlName="lastname" required>
+                  </div>
+                  <small *ngIf="SignupForm.controls['lastname'].dirty &&
+                   SignupForm.hasError('required','lastname')" class="text-danger">Last Name is required</small>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['email'].dirty && 
+                  SignupForm.hasError('required','email')">
+
+                    <label for="Email">Email</label>
+                    <br>
+                    <input class="form-control" type="email" formControlName="email" required>
+                  </div>
+                  <small *ngIf="SignupForm.controls['email'].dirty && 
+                    SignupForm.hasError('required','email')" class="text-danger">Email is required</small>
+
+                  <small *ngIf="SignupForm.controls['email'].dirty &&
+                   SignupForm.hasError('email','email')" class="text-danger">Input Email Format</small>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['contact'].dirty &&
+                   SignupForm.hasError('required','contact')">
+                    <label for="Phone">Phone No.</label>
+                    <br>
+                    <input class="form-control" type="tel" formControlName="contact" ng2telInput
+                      [mask]="'(0000)-00-000-000'" required>
+                  </div>
+                  <small *ngIf="SignupForm.controls['contact'].dirty &&
+                 SignupForm.hasError('required','contact')" class="text-danger">Mobile Number Required </small>
+
+                  <small *ngIf="SignupForm.controls['contact'].dirty && 
+                SignupForm.hasError('pattern','contact')" class="text-danger">Include Your Country Code Without "+"
+                  </small>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mt-3" [class.error]="SignupForm.controls['password'].dirty &&
+                   SignupForm.hasError('required','password')">
+                    <label for="password">Password</label>
+                    <br>
+                    <input class="form-control" formControlName="password" [type]="changepass?'password':'text'"
+                      required>
+
+                    <span class="eyeicon" (click)="viewpass()">
+                      <i [ngClass]="visible?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
+                  </div>
+                  <small *ngIf="SignupForm.controls['password'].dirty && 
+                  SignupForm.hasError('required','password')" class="text-danger">Password is required</small>
+
+                  <small *ngIf="SignupForm.controls['password'].dirty && 
+                  SignupForm.hasError('minlength','password')" class="text-danger">Password Must be atleast 8.</small>
+
+                  <small *ngIf="SignupForm.controls['password'].dirty && 
+                  SignupForm.hasError('maxlength','password')" class="text-danger">Password Must be atmost 16.</small>
+                </div>
+
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group mt-3" [class.error]="SignupForm.controls['cpassword'].dirty && 
+                  SignupForm.hasError('required','cpassword')">
+
+                    <label for="password">Confirm Password</label>
+                    <br>
+                    <input class="form-control" formControlName="cpassword" [type]="changepass?'password':'text'"
+                      required>
+
+                    <span class="eyeicon" (click)="viewpass()">
+                      <i [ngClass]="visible?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
+                  </div>
+                  <small *ngIf="SignupForm.controls['cpassword'].dirty && 
+                  SignupForm.hasError('required','cpassword')" class="text-danger">Cornfirm Password is
+                    required</small>
+
+                  <small *ngIf="SignupForm.controls['cpassword'].dirty && 
+                  SignupForm.hasError('MatchPass','cpassword')" class="text-danger">Password did not Match</small>
+                </div>
+              </div>
+
+              <div class="text-center mt-5">
+                <input class="" type="checkbox" name="remember" id="remember">
+                <span class="p-1">I agree with the Term of Use</span>
+              </div>
+              <button type="submit" (click)="Signup()" class="auth btn btn-lg mt-2 text-center">Sign In</button>
+
+              <div class="mt-4 text-center">
+                <p> Or Sign In With Other Accout</p>
+              </div>
+              <div class="Social-account text-center p-2">
+                <span><a href="#"><i class="fa fa-google"></i></a></span>
+                <span><a href="#"><i class="fa fa-facebook"></i></a></span>
+                <span><a href="#"><i class="fa fa-instagram"></i></a></span>
+                <span><a href="#"><i class="fa fa-linkedin"></i></a></span>
+              </div>
+              <div class="mt-3 text-center">
+                <p> <a routerLink="/login" style="text-decoration: none;" class="text-light">Already have an account?
+                    <span style="color:#FF971D; padding: 5px; ">Sign In</span></a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <img src="../../assets/c-1.png" width="60px" class="image-fluid litcoin2" alt="lit">
+      </div>
+      <div class="col-md-3 col-sm-1">
+        <img src="../../assets/c-1.png" width="150px" class="image-fluid etherium" alt="lit">
+        <img src="../../assets/c-1.png" width="70px" class="image-fluid etherium2" alt="lit">
+        <img src="../../assets/c-1.png" width="50px" class="image-fluid etherium3" alt="lit">
+      </div>
+    </div>
+  </div>
+</div>
