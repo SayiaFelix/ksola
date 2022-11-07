@@ -71,11 +71,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>{{solData?.name}}
-                         <div *ngIf="loading$ | async" class="spinner-border text-success text-center" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                          </div>
-                      </td>
+                      <td>{{solData?.name}}</td>
                       <td><span class="value">{{solData?.market_data.current_price.usd | currency}}</span></td>
                       <td>{{solData?.market_data.high_24h.usd | currency}}</td>
                       <td>{{solData?.market_data.low_24h.usd | currency}}</td>
