@@ -4,7 +4,7 @@
 }
 
 .collapse li :hover {
-    box-shadow: 0px 16px 16px 0px rgba(247, 247, 247, 0.952);
+    box-shadow: 0px 8px 8px 0px rgba(2, 2, 2, 0.952);
     transition: all 0.2s ease-in-out;
     color: #FF971D;
 }
