@@ -150,6 +150,7 @@ th {
 
 :host ::ng-deep tr.mat-row {
    height: 55px;
+   
 }
 
 :host ::ng-deep tr.mat-row :hover {
