@@ -410,7 +410,9 @@ button {
     .bitcoin3 {
         display: none;
     }
-
+   .krypto {
+      display:none;
+     }
     .litcoin2 {
         display: none;
     }
