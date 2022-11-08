@@ -10,7 +10,9 @@ export class ApiService{
   constructor(private http: HttpClient) { }
 
  
-
+ getUsers() {
+    return this.http.get<any>(`http://localhost:3000/users/`)
+  }
   getCurrency() {
     return this.http.get<any>(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&sparkline=false`);
   }

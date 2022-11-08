@@ -1,6 +1,6 @@
 export class Users {
 constructor(
-    public name:string,
+    public firstname:string,
     public email:string
     ){}
 

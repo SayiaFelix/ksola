@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
   loading$ = this.loader.loading$;
   solData: any;
   days: number = 1;
-  users:Users | any;
+  userData: any;
 
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
@@ -82,18 +82,6 @@ export class DashboardComponent implements OnInit {
     this.nav.hide();
     this.getSolDetail();
     this.getSolanaGraphData(this.days);
-
-     interface ApiResponse{
-      name: string
-      email : string
-    }
-
-    this.http.get<ApiResponse>("http://localhost:3000/users/")
-    .subscribe((data: { name: string; email: string; })=>{
-      this.users = new Users(data.name, data.email)
-    },err=>{
-      this.users = new Users("Anonmous","anonmous@gmail.com")
-    })
   }
 
   openDialog() {
@@ -128,6 +116,13 @@ export class DashboardComponent implements OnInit {
     //     }
     //   })
 
+  }
+  getUserDetail() {
+    this.solApi.getUsers()
+      .subscribe(res => {
+        this.userData = res;
+        console.log(this.userData)
+      })
   }
 
   getSolDetail() {
