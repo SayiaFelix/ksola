@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
@@ -6,12 +6,16 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
- title = 'KryptoPesa';
-  isChecked: boolean= false;
-  mode : string=''
- 
-  changed(event:MatSlideToggleChange):void{
+export class AppComponent implements OnInit {
+  title = 'KryptoPesa';
 
+  storedTheme: string | null = localStorage.getItem('theme-color')
+  constructor() { }
+  ngOnInit(): void {
+
+  }
+  setTheme(theme: any) {
+    localStorage.setItem('theme-color', theme);
+    this.storedTheme = localStorage.getItem('theme-color')
   }
 }
