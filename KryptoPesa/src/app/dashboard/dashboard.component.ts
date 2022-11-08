@@ -9,6 +9,8 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { NgToastService } from 'ng-angular-popup';
 import { Dialog2Component } from '../dialog2/dialog2.component';
 import { LoadingService } from '../service/loading.service';
+import { Users } from '../class/users';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,8 +28,7 @@ export class DashboardComponent implements OnInit {
   loading$ = this.loader.loading$;
   solData: any;
   days: number = 1;
-
-
+  users:Users | any;
 
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
@@ -73,13 +74,26 @@ export class DashboardComponent implements OnInit {
     public dialog: MatDialog,
     private toast: NgToastService,
     private api: ApiService,
-    private loader: LoadingService
+    private loader: LoadingService,
+    private http:HttpClient
   ) { }
 
   ngOnInit(): void {
     this.nav.hide();
     this.getSolDetail();
     this.getSolanaGraphData(this.days);
+
+     interface ApiResponse{
+      name: string
+      email : string
+    }
+
+    this.http.get<ApiResponse>("http://localhost:3000/users/")
+    .subscribe((data: { name: string; email: string; })=>{
+      this.users = new Users(data.name, data.email)
+    },err=>{
+      this.users = new Users("Anonmous","anonmous@gmail.com")
+    })
   }
 
   openDialog() {
@@ -102,43 +116,17 @@ export class DashboardComponent implements OnInit {
     })
   }
   getAllProduct() {
-    this.api.getProduct()
-      .subscribe({
-        next: (res) => {
-          console.log(res)
+    // this.api.getProduct()
+    //   .subscribe({
+    //     next: (res) => {
+    //       console.log(res)
 
-        },
-        error: (err) => {
-          this.toast.error({ detail: 'ERROR!!!', summary: "Error while recording/fetching the data!!", duration: 5000 })
-          // alert('error while recording/fetching the data')
-        }
-      })
-
-  }
-
-  editProduct(row: any) {
-    this.dialog.open(DialogComponent, {
-      width: '40%',
-      data: row
-    }).afterClosed().subscribe(val => {
-      if (val === 'update') {
-        this.getAllProduct();
-      }
-    })
-  }
-
-  deleteProduct(id: number) {
-    this.api.deleteProduct(id)
-      .subscribe({
-        next: (res) => {
-          alert("Product Deleted Successfully")
-          this.getAllProduct();
-        },
-        error: () => {
-          this.toast.error({ detail: 'CANCELLED!!!', summary: "Error while Deleting the product!!", duration: 5000 })
-          // alert('Error while Deleting the product');
-        }
-      })
+    //     },
+    //     error: (err) => {
+    //       this.toast.error({ detail: 'ERROR!!!', summary: "Error while recording/fetching the data!!", duration: 5000 })
+    //       // alert('error while recording/fetching the data')
+    //     }
+    //   })
 
   }
 
