@@ -95,7 +95,7 @@
 
 
                             <ng-container matColumnDef="price_change_percentage_24h">
-                                <th mat-header-cell *matHeaderCellDef mat-sort-header> 24h%</th>
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> 24h% CHANGE </th>
                                 <td class="text-start"  mat-cell *matCellDef="let row"> {{row.price_change_percentage_24h}}% </td>
                             </ng-container>
 
@@ -106,6 +106,10 @@
                                     <span class="mx-1 fw-bold" style="color:#5BC43B ;">({{row.symbol |
                                         uppercase}})</span>
                                 </td>
+                            </ng-container>
+                            <ng-container matColumnDef="circulating_supply">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> SUPPLY </th>
+                                <td class="text-start"  mat-cell *matCellDef="let row"> {{row.circulating_supply}}</td>
                             </ng-container>
 
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
