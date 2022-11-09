@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { AuthGuard } from './guards/auth.guard';
 import { HomepageComponent } from './homepage/homepage.component';
 import { KryptoPriceComponent } from './krypto-price/krypto-price.component';
 import { LoginComponent } from './login/login.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'otp',component:OtpComponent},
 
   {path:'homepage',component:HomepageComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',canActivate:[AuthGuard],component:DashboardComponent},
   {path:'about-us',component:AboutusComponent},
   {path:'coinDetail/:id',component:KryptoPriceComponent},
 
