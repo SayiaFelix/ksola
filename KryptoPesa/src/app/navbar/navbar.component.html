@@ -1,5 +1,5 @@
-<div *ngIf="nav.visible">
-  <nav class="navbar navbar-expand-lg navbar-dark text-dark shadow-sm p-3 text-light rounded">
+<div *ngIf="nav.visible"  class="mat-app-background" >
+  <nav class="navbar navbar-expand-lg navbar-dark text-dark shadow-sm p-3 text-light rounded mat-app-background" [ngClass]="{'dark-theme-mode':isDarkTheme}" >
     <div class="container-fluid">
       <a class="navbar-brand fs-2 " href="#">
         <img src="../../assets/logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top img-fluid"
@@ -36,7 +36,10 @@
           </li>
         </ul>
       
-     
+      <mat-slide-toggle [(ngModel)]="isDarkTheme" (change)="storedThemeSelection()">
+        <span style="flex:auto;"></span>
+        <mat-icon>bedtime</mat-icon>
+      </mat-slide-toggle>
         <div class="d-flex nav-item">
           <button class="btn button_1">
             <a class="nav-link" routerLink="/signup" routerLinkActive="active">

@@ -64,8 +64,12 @@
                    SignupForm.hasError('required','contact')">
                     <label for="Phone">Phone No.</label>
                     <br>
-                    <input class="form-control" type="tel" formControlName="contact" ng2telInput
-                      [mask]="'(0000)-00-000-000'" required>
+                    <input 
+                    class="form-control" 
+                    type="tel"
+                    formControlName="contact" ng2telInput
+                    [mask]="'(0000)-00-000-000'"
+                     required>
                   </div>
                   <small *ngIf="SignupForm.controls['contact'].dirty &&
                  SignupForm.hasError('required','contact')" class="text-danger">Mobile Number Required </small>

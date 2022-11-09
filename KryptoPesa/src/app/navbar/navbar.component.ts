@@ -9,6 +9,8 @@ import { NavService } from '../service/nav.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  isDarkTheme:boolean =true
   loading$ = this.loader.loading$;
 
   constructor(private apiCoin: ApiService,
@@ -16,12 +18,16 @@ export class NavbarComponent implements OnInit {
     private loader: LoadingService
   ) { }
 
+
   coinData: any = [];
 
   ngOnInit(): void {
     this.getCoinData();
+    this.isDarkTheme = localStorage.getItem('theme')==="Dark" ? true:false;
   }
-
+  storedThemeSelection(){
+    localStorage.setItem('theme',this.isDarkTheme? "Dark":"Light");
+  }
   getCoinData() {
     this.apiCoin.getCurrencyTrending()
       .subscribe(res => {

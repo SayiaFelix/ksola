@@ -2,9 +2,10 @@
 
 .banner {
    background-image: url('../../assets/10.jpg');
-   height: 465px;
+   height: 460px;
    width: 100%;
    background-size: cover;
+   padding: 130px 0;
 }
 
 .header {
@@ -18,8 +19,9 @@
    color: #fff;
    font-size: 50px;
    font-weight: bold;
-   margin-top: 7%;
-   margin-left: -7%;
+
+   /* margin-top: 7%;
+   margin-left: -7%; */
 }
 
 .header h4 {
@@ -29,13 +31,13 @@
    font-weight: 400;
    text-transform: capitalize;
    letter-spacing: 0.00714em;
-   margin-left: -7%;
+   /* margin-left: -7%; */
 }
 
 /* Promo section */
 
 .krypto {
-   background-image: url(../../assets/slider-4.jpg);
+   background-image: url(../../assets/callback-background.jpg);
    background-repeat: no-repeat;
    padding-bottom: 10px;
    padding-top: 15px;

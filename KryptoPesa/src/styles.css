@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import'./theme/global.scss'; */
+
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 
@@ -75,7 +75,7 @@ body {
 
 .register h6 {
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
 
 }
 
@@ -199,16 +199,16 @@ button {
 
 .scroll-top {
     background-color: #5BC43B;
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    font-size: 28px;
+    font-size: 19px;
     margin-right: 2%;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 3px;
     z-index: 999;
     float: right;
-    padding: 7px 0;
+    padding: 5px 0;
 }
 
 .scroll-top:hover {
