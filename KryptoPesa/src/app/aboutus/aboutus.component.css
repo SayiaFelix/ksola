@@ -6,14 +6,15 @@
     z-index: 1;
     background-color: #fff;
     color: #202021;
+    padding: 55px 0;
 }
 
 .about_section .section_heading h4 {
     background-color: #202021;
     color: #5BC43B;
     display: inline-block;
-    padding: 10px;
-    font-size: 12px;
+    padding: 12px;
+    font-size: 13px;
     border-radius: 2px;
     text-transform: uppercase;
     font-weight: 700;
@@ -22,7 +23,7 @@
 .about_section .section_heading h2 {
     background-color: rgba(249, 183, 7, 0.9);
     display: inline-block;
-    padding: 20px 15px;
+    padding: 22px 15px;
     color: #fff;
     border-radius: 2px;
 }
@@ -148,15 +149,14 @@
 
 .contactus {
     color: #fff;
-    padding-bottom: 10px;
-    background-image: url(../../assets/callback-background.jpg);
+    background-image: url(../../assets/slider-4.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    padding: 50px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
     z-index: 1;
