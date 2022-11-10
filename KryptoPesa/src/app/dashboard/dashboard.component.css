@@ -61,11 +61,14 @@
 
 @media screen and (max-height: 450px) {
   .sidenav {
-    padding-top: 13px;
+    padding-top: 12px;
   }
 
   .sidenav a {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .main{
+    width: 100%;
   }
 }
 
