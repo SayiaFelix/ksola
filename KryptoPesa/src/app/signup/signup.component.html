@@ -23,7 +23,10 @@
                    SignupForm.hasError('required','firstname')">
                     <label for="name">First Name</label>
                     <br>
-                    <input class="form-control" type="text" formControlName="firstname" required>
+                    <input class="form-control"
+                     type="text" 
+                     formControlName="firstname" 
+                     required>
                   </div>
                   <small *ngIf="SignupForm.controls['firstname'].dirty &&
                      SignupForm.hasError('required','firstname')" class="text-danger">First Name is required</small>
@@ -35,7 +38,11 @@
 
                     <label for="name">Last Name</label>
                     <br>
-                    <input class="form-control" type="text" formControlName="lastname" required>
+                    <input 
+                    class="form-control" 
+                    type="text" 
+                    formControlName="lastname" 
+                    required>
                   </div>
                   <small *ngIf="SignupForm.controls['lastname'].dirty &&
                    SignupForm.hasError('required','lastname')" class="text-danger">Last Name is required</small>
@@ -50,7 +57,11 @@
 
                     <label for="Email">Email</label>
                     <br>
-                    <input class="form-control" type="email" formControlName="email" required>
+                    <input 
+                     class="form-control"
+                     type="email"
+                     formControlName="email"
+                     required>
                   </div>
                   <small *ngIf="SignupForm.controls['email'].dirty && 
                     SignupForm.hasError('required','email')" class="text-danger">Email is required</small>
@@ -87,8 +98,11 @@
                    SignupForm.hasError('required','password')">
                     <label for="password">Password</label>
                     <br>
-                    <input class="form-control" formControlName="password" [type]="changepass?'password':'text'"
-                      required>
+                    <input 
+                    class="form-control" 
+                    formControlName="password" 
+                    [type]="changepass?'password':'text'"
+                    required>
 
                     <span class="eyeicon" (click)="viewpass()">
                       <i [ngClass]="visible?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
@@ -109,7 +123,10 @@
 
                     <label for="password">Confirm Password</label>
                     <br>
-                    <input class="form-control" formControlName="cpassword" [type]="changepass?'password':'text'"
+                    <input 
+                      class="form-control" 
+                      formControlName="cpassword" 
+                      [type]="changepass?'password':'text'"
                       required>
 
                     <span class="eyeicon" (click)="viewpass()">

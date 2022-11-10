@@ -8,15 +8,15 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 })
 export class AppComponent implements OnInit {
   title = 'KryptoPesa';
-  isDarkTheme:boolean =false
+  isLightTheme:boolean =false
 
 
   constructor() { }
   ngOnInit(): void {
-    this.isDarkTheme = localStorage.getItem('theme')==="Dark" ? true:false;
+    this.isLightTheme = localStorage.getItem('theme')==="Light" ? true:false;
 
   }
   storedThemeSelection(){
-    localStorage.setItem('theme',this.isDarkTheme? "Dark":"Light");
+    localStorage.setItem('theme',this.isLightTheme? "Light":"Dark");
   }
 }

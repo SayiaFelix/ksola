@@ -3,12 +3,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 
-body {
+/* body {
     background-color: #202022;
     color: #fff;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+} */
 
 .eyeicon {
     position: absolute;
