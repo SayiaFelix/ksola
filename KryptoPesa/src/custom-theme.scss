@@ -1,39 +1,28 @@
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@use '@angular/material' as mat;
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$KryptoPesa-primary: mat.define-palette(mat.$indigo-palette);
-$KryptoPesa-accent: mat.define-palette(mat.$pink-palette);
-$KryptoPesa-warn: mat.define-palette(mat.$red-palette);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$KryptoPesa-theme: mat.define-light-theme((
-  color: (
-    primary: $KryptoPesa-primary,
-    accent: $KryptoPesa-accent,
-    warn: $KryptoPesa-warn,
-  )
-));
+// $KryptoPesa-primary: mat.define-palette(mat.$indigo-palette);
+// $KryptoPesa-accent: mat.define-palette(mat.$pink-palette);
+// $KryptoPesa-warn: mat.define-palette(mat.$red-palette);
+
+// $KryptoPesa-theme: mat.define-light-theme((
+//   color: (
+//     primary: $KryptoPesa-primary,
+//     accent: $KryptoPesa-accent,
+//     warn: $KryptoPesa-warn,
+//   )
+// ));
+
 // .light-theme-mode{
  
 // }
-@include mat.all-component-themes($KryptoPesa-theme);
+// @include mat.all-component-themes($KryptoPesa-theme);
 
-
-//for dark
-$KryptoPesa-primary-dark: mat.define-palette(mat.$purple-palette);
-$KryptoPesa-accent-dark: mat.define-palette(mat.$teal-palette);
+$KryptoPesa-primary-dark: mat.define-palette(mat.$pink-palette);
+$KryptoPesa-accent-dark: mat.define-palette(mat.$blue-grey-palette);
 $KryptoPesa-warn-dark: mat.define-palette(mat.$red-palette);
 
 $KryptoPesa-theme-dark: mat.define-dark-theme((
@@ -43,6 +32,26 @@ $KryptoPesa-theme-dark: mat.define-dark-theme((
     warn: $KryptoPesa-warn-dark,
   )
 ));
-.dark-theme-mode{
-    @include mat.all-component-colors($KryptoPesa-theme-dark);
+
+// @include mat.all-component-colors($KryptoPesa-theme-dark);
+@include mat.core-theme($KryptoPesa-theme-dark);
+@include mat.button-theme($KryptoPesa-theme-dark);
+
+
+
+//for light mode
+$KryptoPesa-primary-light: mat.define-palette(mat.$indigo-palette);
+$KryptoPesa-accent-light: mat.define-palette(mat.$pink-palette);
+$KryptoPesa-warn-light: mat.define-palette(mat.$red-palette);
+
+$KryptoPesa-theme-light: mat.define-light-theme((
+  color: (
+    primary: $KryptoPesa-primary-light,
+    accent: $KryptoPesa-accent-light,
+    warn: $KryptoPesa-warn-light,
+  )
+));
+.light-theme-mode{
+    // @include mat.all-component-colors($KryptoPesa-theme-light);
+      @include mat.core-theme($KryptoPesa-theme-light);
 }

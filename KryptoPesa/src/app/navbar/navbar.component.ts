@@ -10,7 +10,7 @@ import { NavService } from '../service/nav.service';
 })
 export class NavbarComponent implements OnInit {
 
-  isDarkTheme:boolean =true
+  isLightTheme:boolean =true
   loading$ = this.loader.loading$;
 
   constructor(private apiCoin: ApiService,
@@ -23,11 +23,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCoinData();
-    this.isDarkTheme = localStorage.getItem('theme')==="Dark" ? true:false;
+    this.isLightTheme = localStorage.getItem('theme')==="Light" ? true:false;
   }
   storedThemeSelection(){
-    localStorage.setItem('theme',this.isDarkTheme? "Dark":"Light");
+    localStorage.setItem('theme',this.isLightTheme? "Light":"Dark");
   }
+  
   getCoinData() {
     this.apiCoin.getCurrencyTrending()
       .subscribe(res => {
