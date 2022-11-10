@@ -16,7 +16,7 @@ export class HomepageComponent implements OnInit {
   loading$ = this.loader.loading$;
   coinData: any = [];
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['name', 'current_price', 'price_change_percentage_24h', 'market_cap','circulating_supply'];
+  displayedColumns: string[] = ['name', 'current_price', 'price_change_percentage_24h','circulating_supply', 'market_cap'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
