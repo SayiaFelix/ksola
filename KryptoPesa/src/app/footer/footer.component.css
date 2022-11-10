@@ -11,6 +11,7 @@
 .widget_wrapper h3 {
     color: #fff;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .widget_wrapper p {

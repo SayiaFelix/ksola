@@ -43,8 +43,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { Dialog2Component } from './dialog2/dialog2.component'
 import { NetworkInterceptor } from './network.interceptor';
 
-import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
-var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+
  
 export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 @NgModule({
@@ -63,8 +62,6 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     OtpComponent,
     DialogComponent,
     Dialog2Component,
-    CanvasJSChart
-
   ],
   imports: [
     BrowserModule,

@@ -94,7 +94,18 @@ td,
 th {
    width: 25%;
 }
+.testimonial_section {
+   background-image: url(../../assets/testimonial-background.jpg);
+   background-repeat: no-repeat;
+   padding-bottom: 10px;
+   padding-top: 15px;
+   background-position: center center;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-attachment: fixed;
+   width: 100%;
 
+}
 .testimonial_section .section_heading h2 {
    color: #fff;
    text-align: center;
