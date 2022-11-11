@@ -1,9 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
-import ValidateForm from '../Helper/validateForm';
+import { Data } from '../interface/data';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +10,26 @@ export class AuthService {
   private _registerUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
   private _otpUrl = " https://cryptopesa.herokuapp.com/CryptoApp/Onboard/confirm?code= "
   private _loginUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
- 
-
-  constructor(private http:HttpClient) { }
 
 
-  registerUser(User: any){
-    return this.http.post<any>(this._registerUrl,User)  
+  constructor(private http: HttpClient) { }
+
+  headers = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+
   }
 
-  requestOtp(user:any){
-     return this.http.get<any>(this._otpUrl,user)  
+  registerUser(User: Data) {
+    return this.http.post<any>(this._registerUrl, User,{observe: 'response'})
   }
 
-  loginUser(loginUser: any){
-    return this.http.get<any>(this._registerUrl,loginUser)  
+  requestOtp(user: any) {
+    return this.http.get<any>(this._otpUrl, user)
+  }
+
+  loginUser(loginUser: any) {
+    return this.http.get<any>(this._registerUrl, loginUser)
   }
 }
