@@ -30,7 +30,7 @@ export class OtpComponent implements OnInit {
     isPasswordInput: false,
     disableAutoFocus: false, 
     placeholder: "*", 
-    inputStyles: { width: "50px", height: "50px", },
+    // inputStyles: { width: "50px", height: "50px", },
     // containerClass:'d-flex justify-content-between'
   }
 
