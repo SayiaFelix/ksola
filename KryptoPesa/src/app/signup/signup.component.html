@@ -19,33 +19,33 @@
               <div class="row">
 
                 <div class="col-md-6 col-sm-6">
-                  <div class="form-group mb-2" [class.error]="SignupForm.controls['firstname'].dirty &&
-                   SignupForm.hasError('required','firstname')">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['firstName'].dirty &&
+                   SignupForm.hasError('required','firstName')">
                     <label for="name">First Name</label>
                     <br>
                     <input class="form-control"
                      type="text" 
-                     formControlName="firstname" 
+                     formControlName="firstName" 
                      required>
                   </div>
-                  <small *ngIf="SignupForm.controls['firstname'].dirty &&
-                     SignupForm.hasError('required','firstname')" class="text-danger">First Name is required</small>
+                  <small *ngIf="SignupForm.controls['firstName'].dirty &&
+                     SignupForm.hasError('required','firstName')" class="text-danger">First Name is required</small>
                 </div>
 
                 <div class="col-md-6 col-sm-6">
-                  <div class="form-group mb-2" [class.error]="SignupForm.controls['lastname'].dirty &&
-                   SignupForm.hasError('required','lastname')">
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['lastName'].dirty &&
+                   SignupForm.hasError('required','lastName')">
 
                     <label for="name">Last Name</label>
                     <br>
                     <input 
                     class="form-control" 
                     type="text" 
-                    formControlName="lastname" 
+                    formControlName="lastName" 
                     required>
                   </div>
-                  <small *ngIf="SignupForm.controls['lastname'].dirty &&
-                   SignupForm.hasError('required','lastname')" class="text-danger">Last Name is required</small>
+                  <small *ngIf="SignupForm.controls['lastName'].dirty &&
+                   SignupForm.hasError('required','lastName')" class="text-danger">Last Name is required</small>
                 </div>
               </div>
 
@@ -71,22 +71,24 @@
                 </div>
 
                 <div class="col-md-6 col-sm-6">
-                  <div class="form-group mb-2" [class.error]="SignupForm.controls['contact'].dirty &&
-                   SignupForm.hasError('required','contact')">
-                    <label for="Phone">Phone No.</label>
+                  <div class="form-group mb-2" [class.error]="SignupForm.controls['mobile'].dirty &&
+                   SignupForm.hasError('required','mobile')">
+                    <label for="Mobile">Phone No.</label>
                     <br>
                     <input 
                     class="form-control" 
                     type="tel"
-                    formControlName="contact" ng2telInput
+                    formControlName="mobile" ng2telInput
                     [mask]="'(0000)-00-000-000'"
                      required>
                   </div>
-                  <small *ngIf="SignupForm.controls['contact'].dirty &&
-                 SignupForm.hasError('required','contact')" class="text-danger">Mobile Number Required </small>
+                  <small *ngIf="SignupForm.controls['mobile'].dirty &&
+                 SignupForm.hasError('required','mobile')" 
+                 class="text-danger">Mobile Number Required </small>
 
-                  <small *ngIf="SignupForm.controls['contact'].dirty && 
-                SignupForm.hasError('pattern','contact')" class="text-danger">Include Your Country Code Without "+"
+                  <small *ngIf="SignupForm.controls['mobile'].dirty && 
+                SignupForm.hasError('pattern','mobile')" 
+                class="text-danger">Include Your Country Code
                   </small>
                 </div>
               </div>
@@ -118,26 +120,26 @@
                 </div>
 
                 <div class="col-md-6 col-sm-6">
-                  <div class="form-group mt-3" [class.error]="SignupForm.controls['cpassword'].dirty && 
-                  SignupForm.hasError('required','cpassword')">
+                  <div class="form-group mt-3" [class.error]="SignupForm.controls['Cpassword'].dirty && 
+                  SignupForm.hasError('required','Cpassword')">
 
                     <label for="password">Confirm Password</label>
                     <br>
                     <input 
                       class="form-control" 
-                      formControlName="cpassword" 
+                      formControlName="Cpassword" 
                       [type]="changepass?'password':'text'"
                       required>
 
                     <span class="eyeicon" (click)="viewpass()">
                       <i [ngClass]="visible?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></i></span>
                   </div>
-                  <small *ngIf="SignupForm.controls['cpassword'].dirty && 
-                  SignupForm.hasError('required','cpassword')" class="text-danger">Cornfirm Password is
+                  <small *ngIf="SignupForm.controls['Cpassword'].dirty && 
+                  SignupForm.hasError('required','Cpassword')" class="text-danger">Cornfirm Password is
                     required</small>
 
-                  <small *ngIf="SignupForm.controls['cpassword'].dirty && 
-                  SignupForm.hasError('MatchPass','cpassword')" class="text-danger">Password did not Match</small>
+                  <small *ngIf="SignupForm.controls['Cpassword'].dirty && 
+                  SignupForm.hasError('MatchPass','Cpassword')" class="text-danger">Password did not Match</small>
                 </div>
               </div>
 

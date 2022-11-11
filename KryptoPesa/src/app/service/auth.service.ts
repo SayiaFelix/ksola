@@ -10,12 +10,20 @@ import ValidateForm from '../Helper/validateForm';
 })
 export class AuthService {
 
-  private _registerUrl = "http://localhost:3000/users/"
+  private _registerUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
+  private _otpUrl = " https://cryptopesa.herokuapp.com/CryptoApp/Onboard/confirm?code= "
+  private _loginUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
+ 
+
   constructor(private http:HttpClient) { }
 
 
-  registerUser(RegisterUser: any){
-    return this.http.post<any>(this._registerUrl,RegisterUser)  
+  registerUser(User: any){
+    return this.http.post<any>(this._registerUrl,User)  
+  }
+
+  requestOtp(user:any){
+     return this.http.get<any>(this._otpUrl,user)  
   }
 
   loginUser(loginUser: any){

@@ -234,6 +234,15 @@
       "password": "123456789",
       "cpassword": "123456789",
       "id": 42
+    },
+    {
+      "firstname": "Felix",
+      "lastname": "Sayia",
+      "email": "Sayiafelix18@gmail.com",
+      "contact": "121345678998",
+      "password": "123456789",
+      "cpassword": "123456789",
+      "id": 43
     }
   ],
   "comments": [
