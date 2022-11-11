@@ -18,9 +18,8 @@ export class AuthService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     })
-
   }
-
+  
   registerUser(User: Data) {
     return this.http.post<any>(this._registerUrl, User,{observe: 'response'})
   }
