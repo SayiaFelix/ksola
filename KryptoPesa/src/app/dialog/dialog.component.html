@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" style="background-color: white; color: #000; text-align: center; border-radius: 8px;">
     <div class="row">
         <div>
-            <h1 mat-dialog-title class="text-center">
+            <h1 mat-dialog-title class="text-center mt-3">
                 Send Money
                 <span style="color:#f9b707;">(Solana)</span>
             </h1>
@@ -25,7 +25,7 @@
             </form>
         </div>
         <hr>
-        <div mat-dialog-actions [align]="'end'">
+        <div mat-dialog-actions [align]="'center'" class="mb-1">
             <button mat-raised-button color="warn" mat-dialog-close>Close</button>
             <button class="ml-2" mat-raised-button color="primary" (click)="addProduct()">Send</button>
         </div>
