@@ -22,7 +22,7 @@
 }
 
 .about_section .section_heading h2 {
-    background-color: rgba(249, 183, 7, 0.9);
+    background-color: #5BC43B;
     display: inline-block;
     padding: 22px 15px;
     color: #fff;
@@ -36,7 +36,7 @@
 }
 
 .why_info i {
-    color: #f9b707;
+    color: #5BC43B;
     margin-right: 10px;
 }
 
@@ -131,7 +131,7 @@
 }
 
 .team_social a {
-    background-color: #FF971D;
+    background-color: #5BC43B;
     color: #fff;
     font-size: 12px;
     height: 30px;

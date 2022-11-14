@@ -6,7 +6,7 @@
 .collapse li :hover {
     box-shadow: 0px 8px 8px 0px rgba(2, 2, 2, 0.952);
     transition: all 0.2s ease-in-out;
-    color: #FF971D;
+    color: #5BC43B;
 }
 
 .coinBar {

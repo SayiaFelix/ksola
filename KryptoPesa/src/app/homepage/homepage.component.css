@@ -157,7 +157,7 @@ th {
 
 
 :host ::ng-deep tr.mat-header-row {
-   background-color: #f9b707;
+   background-color: #5BC43B;
    width: 100%;
 }
 
@@ -168,6 +168,6 @@ th {
 
 :host ::ng-deep tr.mat-row :hover {
    transition: all 0.2s ease-in-out;
-   color: #f9b707;
+   color: #5BC43B;
    font-size: 15px;
 }

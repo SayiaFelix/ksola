@@ -1,5 +1,5 @@
 .scroll {
-  background-color: #FF971D;
+  background-color: #5BC43B;
   width: 30px;
   height: 25px;
   text-align: center;
@@ -48,7 +48,7 @@
 }
 
 .sidenav a:hover {
-  color: #FF971D;
+  color: #5BC43B;
   font-size: 16px;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .auth1 {
-  background-color: #FF971D;
+  background-color: #5BC43B;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -87,7 +87,7 @@
 
 .auth1:hover {
   background-color: white;
-  color: #FF971D;
+  color: #5BC43B;
   border: #f9fcf8 solid 1px;
 }
 
@@ -108,7 +108,7 @@
 
 .pay1:hover {
   background-color: white;
-  color: #FF971D;
+  color: #5BC43B;
   border: #f9fcf8 solid 1px;
 }
 
@@ -127,7 +127,7 @@
 
 .pay:hover {
   background-color: white;
-  color: #FF971D;
+  color: #5BC43B;
   border: #f9fcf8 solid 1px;
 }
 
@@ -153,7 +153,7 @@ th {
 
 
 :host ::ng-deep tr.mat-header-row {
-  background-color: #f9b707;
+  background-color: #5BC43B;
   width: 100%;
 }
 
@@ -169,7 +169,7 @@ th {
 
 /* Dropdown Buttons */
 .dropbtn {
-  background: #FF971D;
+  background: #5BC43B;
   box-shadow: 0px 8px 16px rgba(255, 151, 29, 0.15);
   border-radius: 4px;
   color: #fff;
@@ -265,7 +265,7 @@ th {
 
 .dropdown:hover .dropbtn {
   background-color: #fff;
-  color: #FF971D;
+  color: #5BC43B;
 }
 
 .btn-graph {
@@ -280,7 +280,7 @@ th {
 
 .btn-graph:hover {
   background-color: #fff;
-  color: #FF971D;
+  color: #202022;
   border: #05fc4b solid 1px;
 }
 

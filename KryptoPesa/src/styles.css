@@ -3,12 +3,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 
-/* body {
+body {
     background-color: #202022;
     color: #fff;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-} */
+}
 
 .eyeicon {
     position: absolute;
@@ -20,7 +20,7 @@
 }
 
 .eyeicon:hover {
-    color: #FF971D;
+    color: #5BC43B;
     font-size: 15px;
 }
 
@@ -40,11 +40,11 @@
 }
 
 .Social-account span a:hover {
-    color: #FF971D;
+    color: #5BC43B;
 }
 
 .auth {
-    background-color: #FF971D;
+    background-color: #5BC43B;
     width: 190px;
     font-family: 'Poppins';
     font-style: normal;
@@ -63,8 +63,8 @@
 
 .auth:hover {
     background-color: white;
-    color: #FF971D;
-    border: #f9b707 solid 1px;
+    color: #5BC43B;
+    border: #5BC43B solid 1px;
 }
 
 .register h2 {
@@ -103,11 +103,11 @@
 }
 
 .button_1 {
-    background-color: #FF971D;
+    background-color: #5BC43B;
     color: #fff;
     line-height: 45px;
     display: inline-block;
-    padding: 0 25px;
+    padding: 0 15px;
     border-radius: 3px;
     text-transform: uppercase;
     font-weight: 700;
@@ -212,7 +212,7 @@ button {
 }
 
 .scroll-top:hover {
-    background-color: #FF971D;
+    background-color: #202022;
     color: #fff;
 }
 
@@ -245,7 +245,7 @@ button {
 }
 
 .breadcrumb li a:hover {
-    color: #FF971D;
+    color: #5BC43B;
 }
 
 .breadcrumb .active {
