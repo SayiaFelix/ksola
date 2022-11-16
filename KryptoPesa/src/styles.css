@@ -307,10 +307,6 @@ button {
         display: none;
     }
 
-    /* .litcoin
-    {
-      display:none;
-    } */
 }
 
 /* ---- End of max-width 992px CSS ---- */
@@ -358,10 +354,12 @@ button {
     p br {
         display: none;
     }
-
-    .page_header {
-        height: 300px;
+    .sidenav{
+        width:100px;
     }
+    .main {
+       margin-left: 100px;
+   }
     
 }
 
@@ -429,6 +427,12 @@ button {
     .etherium {
         display: none;
     }
+   .sidenav{
+        width:80px;
+    }
+    .main {
+       margin-left: 80px;
+   }
 }
 
 /* ---- End of max-width 480px CSS ---- */
