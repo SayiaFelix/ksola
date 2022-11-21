@@ -306,6 +306,9 @@ button {
     .etherium {
         display: none;
     }
+    .image1{
+        display: none;
+    }
 
 }
 
@@ -360,7 +363,10 @@ button {
     .main {
        margin-left: 100px;
    }
-    
+ .img1{
+    width: 80px;
+ }
+  .image1{display: none;}
 }
 
 /* ---- End of max-width 767px CSS ---- */
@@ -433,6 +439,10 @@ button {
     .main {
        margin-left: 80px;
    }
+   .chart{
+    display: none;
+   }
+   .image1{display: none;}
 }
 
 /* ---- End of max-width 480px CSS ---- */

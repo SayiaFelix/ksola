@@ -9,8 +9,10 @@
 }
 .image1{
    margin-top:-10%;
-   width: 100px; 
 }
+.img1{
+    width: 520px;
+   }
 .header {
    height: 50%;
    display: flex;
