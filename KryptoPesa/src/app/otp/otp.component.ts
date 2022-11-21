@@ -43,7 +43,7 @@ export class OtpComponent implements OnInit {
       this.inputDigitLeft = this.configOptions.length - this.otp.length + " Digits Left";
     }
     if(this.otp.length==this.configOptions.length){
-      this.inputDigitLeft ="Let's Go!" ;
+      this.inputDigitLeft ="Let's Go!!" ;
       this.btnStatus='auth'
     }
   }
