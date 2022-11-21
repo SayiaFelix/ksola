@@ -155,10 +155,10 @@ body {
 
 .litcoin2 {
     position: absolute;
-    left: 90%;
-    right: -90%;
-    top: 120%;
-    bottom: -120%;
+    left: 80%;
+    right: -80%;
+    top: 110%;
+    bottom: -110%;
     transform: rotate(-98.25deg);
 }
 
@@ -173,13 +173,14 @@ body {
 .etherium2 {
     position: absolute;
     transform: rotate(44.79deg);
+
 }
 
 .etherium3 {
     position: absolute;
-    right: 1%;
-    top: 55.41%;
-    bottom: -55.41%;
+    right: 2%;
+    top: 70.41%;
+    bottom: -70.41%;
     transform: rotate(-36.45deg);
 }
 

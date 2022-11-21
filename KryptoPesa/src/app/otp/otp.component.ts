@@ -7,17 +7,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class OtpComponent implements OnInit {
 
-// otp!: string; showOtpComponent = true; 
-// @ViewChild("ngOtpInput", { static: false }) 
-// ngOtpInput: any; config = { 
-
-//   length: 4, 
-//   isPasswordInput: false,
-//   disableAutoFocus: false, 
-//   placeholder: "*", 
-//   inputStyles: { width: "50px", height: "50px", },
-//  }; 
-
   otp!:string; showOtpComponent = true; 
   inputDigitLeft:string='Verify Code';
   btnStatus:string='button_1'
