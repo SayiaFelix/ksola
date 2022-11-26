@@ -1,12 +1,13 @@
 <div *ngIf="nav.visible">
-  <nav class="navbar navbar-expand-lg navbar-dark text-dark shadow-sm p-3 text-light rounded" [ngClass]="{'light-theme-mode':isLightTheme}" >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow p-3 rounded"
+    [ngClass]="{'light-theme-mode':isLightTheme}">
     <div class="container-fluid">
       <a class="navbar-brand fs-2 " href="#">
         <img src="../../assets/logo.png" alt="" width="50" height="50" class="d-inline-block align-text-top img-fluid"
           style="margin-top: -2%;">
-        <span style="color: #fff;" class="">
+        <span style="color: #fff; font-size:19px;">
           Krypto</span>
-        <span style="color:  #5BC43B;" class="fw-bold">Pesa</span>
+        <span style="color:  #5BC43B; font-size:22px;" class="fw-bold">Pesa</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +36,10 @@
             </a>
           </li>
         </ul>
-      <mat-slide-toggle class="text" [(ngModel)]="isLightTheme" (change)="storedThemeSelection()">
-        <span style="flex:auto;"></span>
-        <mat-icon>bedtime</mat-icon>
-      </mat-slide-toggle>
+        <mat-slide-toggle class="text" [(ngModel)]="isLightTheme" (change)="storedThemeSelection()">
+          <span style="flex:auto;"></span>
+          <!-- <mat-icon>bedtime</mat-icon> -->
+        </mat-slide-toggle>
         <div class="d-flex nav-item">
           <button class="btn button_1">
             <a class="nav-link" routerLink="/signup" routerLinkActive="active">
@@ -62,7 +63,7 @@
                   <div class="">
                     <h5 class="text-center">
                       <span style="color:#5BC43B;padding: 1px;">
-                        (<b>  {{row.symbol | uppercase}}</b>)
+                        (<b> {{row.symbol | uppercase}}</b>)
                       </span>
                       <br>
                       <span class="fw-bold text-dark">{{row.current_price | currency}}</span>
@@ -80,4 +81,3 @@
   </div>
 
 </div>
- 

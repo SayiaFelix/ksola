@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
       Cpassword: ['', Validators.required]
     }
-      , {
+      ,{
         validators: this.MatchPass('password', 'Cpassword')
       })
     this.log.show()

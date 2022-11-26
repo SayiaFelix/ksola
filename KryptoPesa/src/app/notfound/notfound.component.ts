@@ -9,7 +9,6 @@ import { NavService } from '../service/nav.service';
 export class NotfoundComponent implements OnInit {
 
   constructor(private log: NavService) { }
-
   ngOnInit(): void {
     this.log.show()
   }
