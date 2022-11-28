@@ -30,6 +30,5 @@ export class Dialog2Component implements OnInit {
     })
 
   }
-
   payment() { }
 }
