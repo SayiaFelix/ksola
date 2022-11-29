@@ -33,7 +33,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
 import { NgChartsModule } from 'ng2-charts';
 import { OtpComponent } from './otp/otp.component';
 import { NgOtpInputModule } from 'ng-otp-input';
@@ -71,6 +70,7 @@ export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+ 
 
     MatTableModule,
     MatPaginatorModule,

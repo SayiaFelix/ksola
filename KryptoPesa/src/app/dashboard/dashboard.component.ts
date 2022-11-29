@@ -9,8 +9,8 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { NgToastService } from 'ng-angular-popup';
 import { Dialog2Component } from '../dialog2/dialog2.component';
 import { LoadingService } from '../service/loading.service';
-import { Users } from '../class/users';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,7 +29,10 @@ export class DashboardComponent implements OnInit {
   solData: any;
   days: number = 1;
   userData: any;
-  
+  productForm!: FormGroup
+  sendForm!: FormGroup
+  paymentOption=['Send Money','Pay Bill']
+
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
       {
@@ -63,27 +66,44 @@ export class DashboardComponent implements OnInit {
         text: 'Solana Price Trends'
       },
     }
-    
+
   };
   public lineChartType: ChartType = 'line';
 
   @ViewChild(BaseChartDirective) myLineChart !: BaseChartDirective;
 
   constructor(
+    private formbuilder: FormBuilder,
     private nav: NavService,
     private solApi: ApiService,
     public dialog: MatDialog,
     private toast: NgToastService,
     private api: ApiService,
     private loader: LoadingService,
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
+    this.productForm = this.formbuilder.group({
+      payment: ['', Validators.required],
+      contact: ['', Validators.required],
+      paybill: ['', Validators.required],
+      accountno: ['', Validators.required],
+      price: ['', Validators.required]
+    })
+
+    // this.sendForm = this.formbuilder.group({
+    //   paybill: ['', Validators.required],
+    //   accountno: ['', Validators.required],
+    //   price: ['', Validators.required]
+    // })
     this.nav.hide();
     this.getSolDetail();
     this.getSolanaGraphData(this.days);
   }
+  addProduct() { }
+
+
 
   openDialog() {
     this.dialog.open(DialogComponent, {

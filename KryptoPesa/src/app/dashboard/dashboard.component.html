@@ -105,14 +105,142 @@
         </div>
         <hr>
         <div class="d-flex mt-4">
-          <button (click)="openDialog()" type="submit" class="pay1 btn text-center me-2">
+          <!-- Button trigger modal -->
+          <button type="button" class="pay1 btn text-center me-2" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Send Money
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title mt-2 text-dark fs-2" id="staticBackdropLabel">
+                    Send Money
+                    <span style="color:#5BC43B;">
+                      (<b>Solana</b>)
+                    </span>
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container" data-keyboard="false" data-backdrop="static"
+                    style="background-color: white; color: #000; text-align: center; border-radius: 8px;">
+                    <div class="row">
+                      <div mat-dialog-content data-keyboard="false" data-backdrop="static">
+                        <form [formGroup]="productForm">
+                          <label for="">
+                            <h3>Payment Option</h3>
+                          </label>
+                          <br>
+                          <mat-radio-group formControlName="payment" class="example-radio-group">
+                            <mat-radio-button class="example-radio-button m-1" *ngFor="let pay of paymentOption"
+                              [value]="pay">
+                              {{pay}}
+                            </mat-radio-button>
+                          </mat-radio-group>
+                          <br><br>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Phone No.</mat-label>
+                            <input type="tel" formControlName="contact" placeholder="Phone Number" matInput ng2telInput
+                              [mask]="'(00)-00-000-000'" required>
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Amount(Solana)</mat-label>
+                            <input formControlName="price" matInput type="number" placeholder="Amount(Solana)">
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Paybill</mat-label>
+                            <input type="number" formControlName="paybill" placeholder="Paybill" matInput
+                              [mask]="'000000'" required>
+
+                          </mat-form-field>
+                          <br>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Account No.</mat-label>
+                            <input type="number" formControlName="accountno" placeholder="Account No" matInput required>
+                          </mat-form-field>
+                          <br>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <button (click)="openDialog()" type="submit" class="pay1 btn text-center me-2">
             Send Money
           </button>
           <button (click)="openDialog2()" type="submit" class="pay btn btn-lg text-center">
             PayBills
-          </button>
+          </button> -->
+          <!-- <div>
+            <button type="button" class="pay btn btn-lg text-center" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">
+              Pay Bills
+            </button> <!-- Modal --
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-dark mt-2 fs-2" id="staticBackdropLabel">
+                      Pay Your
+                      <br>
+                      <span style="color:#5BC43B;">
+                        <b>Bills</b>
+                      </span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container"
+                      style="background-color: white; color: black; text-align:center; border-radius: 8px;">
+                      <div class="row">
+                        <div mat-dialog-content>
+                          <form [formGroup]="sendForm">
+                            <mat-form-field appearance="outline">
+                              <mat-label>Paybill</mat-label>
+                              <input type="number" formControlName="paybill" placeholder="Paybill" matInput
+                                [mask]="'000000'" required>
+
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Account No.</mat-label>
+                              <input type="number" formControlName="accountno" placeholder="Account No" matInput
+                                required>
+                            </mat-form-field>
+                            <br>
+                            <mat-form-field appearance="outline">
+                              <mat-label>Amount(Solana)</mat-label>
+                              <input formControlName="price" matInput type="number" placeholder="Amount(Solana)">
+                            </mat-form-field>
+                            <br>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
+
       <div class="account col-md-4 col-sm-3 m-2">
         <div style="background: #313135;border-radius: 4px;">
           <h2 class="text-center"> Transaction Summary </h2>

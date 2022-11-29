@@ -1,4 +1,4 @@
-<div class="container" style="background-color: white; color: #000; text-align: center; border-radius: 8px;">
+<div class="container" data-keyboard="false" data-backdrop="static" style="background-color: white; color: #000; text-align: center; border-radius: 8px;">
     <div class="row">
         <div>
             <h1 mat-dialog-title class="text-center mt-3">
@@ -10,7 +10,7 @@
             </h1>
         </div>
         <hr>
-        <div mat-dialog-content>
+        <div mat-dialog-content data-keyboard="false" data-backdrop="static">
             <form [formGroup]="productForm">
                 <mat-form-field appearance="outline">
                     <mat-label>Phone No.</mat-label>

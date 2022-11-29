@@ -6,7 +6,6 @@ import { Data } from '../interface/data';
   providedIn: 'root'
 })
 export class AuthService {
-
   private _registerUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
   private _otpUrl = " https://cryptopesa.herokuapp.com/CryptoApp/Onboard/confirm?code= "
   private _loginUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
