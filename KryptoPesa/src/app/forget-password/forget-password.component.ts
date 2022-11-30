@@ -35,20 +35,15 @@ export class ForgetPasswordComponent implements OnInit {
       this.http.post<any>("http://localhost:3000/users/", this.forgetPassForm.value)
         .subscribe(res => {
           this.toast.success({ detail: 'Success Message', summary: "Email Added Successfully!!", duration: 5000 })
-          // alert('Signup successfully');
           this.forgetPassForm.reset();
           this.router.navigate(['sign']);
         }, err => {
           this.toast.error({ detail: 'Failed Message', summary: "Email Failed, Something Went wrong!!", duration: 5000 })
-          // alert('something went wrong')
 
         })
-      // send obj to db
-
     } else {
       ValidateForm.validateAllFormFields(this.forgetPassForm)
       alert('Your Form is Empty')
     }
-
   }
 }

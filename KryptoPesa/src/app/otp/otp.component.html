@@ -23,7 +23,7 @@
             <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="configOptions"></ng-otp-input>
           </div>
             <br>
-             <button type="submit" [ngClass]="btnStatus" 
+             <button type="submit" [ngClass]="btnStatus" (click)="validateOtp()"
               class="auth btn btn-lg mt-2 mb-2 text-center">
               {{ this.inputDigitLeft}}
             </button>

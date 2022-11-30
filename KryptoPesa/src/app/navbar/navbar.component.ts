@@ -10,25 +10,24 @@ import { NavService } from '../service/nav.service';
 })
 export class NavbarComponent implements OnInit {
 
-  isLightTheme:boolean =true
+  isLightTheme: boolean = true
   loading$ = this.loader.loading$;
+  coinData: any = [];
 
   constructor(private apiCoin: ApiService,
     public nav: NavService,
     private loader: LoadingService
   ) { }
 
-
-  coinData: any = [];
-
   ngOnInit(): void {
     this.getCoinData();
-    this.isLightTheme = localStorage.getItem('theme')==="Light" ? true:false;
-  }
-  storedThemeSelection(){
-    localStorage.setItem('theme',this.isLightTheme? "Light":"Dark");
+    this.isLightTheme = localStorage.getItem('theme') === "Light" ? true : false;
   }
   
+  storedThemeSelection() {
+    localStorage.setItem('theme', this.isLightTheme ? "Light" : "Dark");
+  }
+
   getCoinData() {
     this.apiCoin.getCurrencyTrending()
       .subscribe(res => {
@@ -36,7 +35,4 @@ export class NavbarComponent implements OnInit {
         this.coinData = res
       })
   }
-
-
-
 }

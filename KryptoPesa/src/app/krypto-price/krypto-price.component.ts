@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../service/api.service';
 
-import{ChartConfiguration,ChartType}from  'chart.js'
+import { ChartConfiguration, ChartType } from 'chart.js'
 import { BaseChartDirective } from 'ng2-charts';
 import { LoadingService } from '../service/loading.service';
 
@@ -14,9 +14,9 @@ import { LoadingService } from '../service/loading.service';
 export class KryptoPriceComponent implements OnInit {
   loading$ = this.loader.loading$;
   coinData: any;
-  coinId! :string;
-  days : number=1;
-  
+  coinId!: string;
+  days: number = 1;
+
   public lineChartData: ChartConfiguration['data'] = {
     datasets: [
       {
@@ -45,52 +45,49 @@ export class KryptoPriceComponent implements OnInit {
     }
   };
   public lineChartType: ChartType = 'line';
-
   @ViewChild(BaseChartDirective) myLineChart !: BaseChartDirective;
 
-
-  constructor(private coinApi : ApiService,
-     private activateRoute : ActivatedRoute,
-     private loader:LoadingService
-     ) { }
+  constructor(private coinApi: ApiService,
+    private activateRoute: ActivatedRoute,
+    private loader: LoadingService
+  ) { }
 
   ngOnInit(): void {
-    this.activateRoute.params.subscribe(val=>{
+    this.activateRoute.params.subscribe(val => {
       this.coinId = val['id'];
     });
     this.getCoinDetail();
     this.getGraphData(this.days);
   }
 
-  getCoinDetail(){
+  getCoinDetail() {
     this.coinApi.getCurrencyById(this.coinId)
-    .subscribe(res=>{
-      this.coinData = res;
-      console.log(this.coinData)
-    })
+      .subscribe(res => {
+        this.coinData = res;
+        console.log(this.coinData)
+      })
   }
 
-  getGraphData(days:number){
+  getGraphData(days: number) {
     this.days = days
-    this.coinApi.getCurrencyDataGraphically(this.coinId,this.days)
-    .subscribe(res=>{
-      setTimeout(()=>{
-        this.myLineChart.chart?.update();
-      },100)
+    this.coinApi.getCurrencyDataGraphically(this.coinId, this.days)
+      .subscribe(res => {
+        setTimeout(() => {
+          this.myLineChart.chart?.update();
+        }, 100)
 
-      console.log(res)
-      this.lineChartData.datasets[0].data =res.prices.map((a:any)=>{
-        return a[1];
-      });
-      this.lineChartData.labels = res.prices.map((a:any)=>{
-        let date = new Date(a[0]);
-        let time = date.getHours() > 12 ?
-        `${date.getHours() - 12}: ${date.getMinutes()} PM` :
-        `${date.getHours() - 12}: ${date.getMinutes()} AM` 
+        console.log(res)
+        this.lineChartData.datasets[0].data = res.prices.map((a: any) => {
+          return a[1];
+        });
+        this.lineChartData.labels = res.prices.map((a: any) => {
+          let date = new Date(a[0]);
+          let time = date.getHours() > 12 ?
+            `${date.getHours() - 12}: ${date.getMinutes()} PM` :
+            `${date.getHours() - 12}: ${date.getMinutes()} AM`
 
-        return this.days === 1 ? time : date.toLocaleDateString();
+          return this.days === 1 ? time : date.toLocaleDateString();
+        })
       })
-
-    })
   }
 }

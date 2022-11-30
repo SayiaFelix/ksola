@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { NavService } from '../service/nav.service';
 
@@ -14,9 +12,8 @@ export class FooterComponent implements OnInit {
   public subscribeForm!: FormGroup;
   isSubmit = true;
   submittedMessage = '';
+
   constructor(private fb: FormBuilder,
-    private http: HttpClient,
-    private router: Router,
     private toast: NgToastService,
     public foot: NavService
   ) { }

@@ -8,7 +8,7 @@ import { Data } from '../interface/data';
 export class AuthService {
   private _registerUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
   private _otpUrl = " https://cryptopesa.herokuapp.com/CryptoApp/Onboard/confirm?code= "
-  private _loginUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/Save"
+  private _loginUrl = "https://cryptopesa.herokuapp.com/CryptoApp/Onboard/auth/login"
 
 
   constructor(private http: HttpClient) { }
@@ -18,16 +18,16 @@ export class AuthService {
       'Content-Type': 'application/json',
     })
   }
-  
+
   registerUser(User: Data) {
-    return this.http.post<any>(this._registerUrl, User,{observe: 'response'})
+    return this.http.post<any>(this._registerUrl, User, { observe: 'response' })
   }
 
-  requestOtp(user: any) {
-    return this.http.get<any>(this._otpUrl, user)
+  requestOtp(Otp: any) {
+    return this.http.get<any>(`https://cryptopesa.herokuapp.com/CryptoApp/Onboard/confirm?code=${Otp}`)
   }
 
-  loginUser(loginUser: any) {
-    return this.http.get<any>(this._registerUrl, loginUser)
+  loginUser(User: Data) {
+    return this.http.post<any>(this._loginUrl, User,{ observe: 'response' })
   }
 }
