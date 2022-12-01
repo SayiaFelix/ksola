@@ -46,7 +46,7 @@ export class OtpComponent implements OnInit {
     if (this.otp.length == this.configOptions.length) {
       this.inputDigitLeft = "Let's Go!!";
       this.btnStatus = 'auth'
-      // this.router.navigate(['login']);
+      this.router.navigate(['login']);
     }
     if (this.Otp === this.otp) {
       this.auth.requestOtp(this.Otp)
